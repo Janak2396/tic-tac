@@ -1,11 +1,11 @@
 @media screen and (min-width : 500px) {
     .card{
-        height:6    0px
+        height:100px;
     }
 }
 @media screen and (max-width : 501px) {
     .card{
-        height: 100px;
+        height: 15vh;
     }
 }
 .container{
@@ -13,9 +13,10 @@
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    height: 100vh;
 }
 .header{
-    font-family: "Arial", sans-serif;
+   
     font-size: 20px;
     font-family: "Permanent Marker", cursive;
     text-align: center;
@@ -35,11 +36,17 @@ table{
     border: solid 5px rgb(115, 143, 49) ;
     border-radius: 10px;
     width: 30%;
-    height:100px;
-    margin: 10px;
+  
+    margin: 5px;
     text-align: center;
     color: rgb(115, 143, 49);
    font-size: 7vh;
    font-family: "Permanent Marker", cursive;
 }
-
+.draw-state{
+    font-size: xx-large;
+}
+.user-name{
+    font-size: xx-large;
+    font-family: "Permanent Marker", cursive;
+}

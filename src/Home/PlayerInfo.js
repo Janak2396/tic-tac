@@ -14,12 +14,12 @@ export default function PlayerInfo(props){
     }
     
     return(
-      
+      <div className="user-container">
         <div className="card-user">
 			Player 1: <input type="text" placeholder='Enter Your Name' ref={playeroneRef}/>
 			Player 2: <input type="text" placeholder='Enter Your Name' ref={playertwoRef}/><br/>
-            <button onClick={()=>SubmitHandler()}>Let's Play</button>
+            <button className="btn" onClick={()=>SubmitHandler()}>Let's Play</button>
 	    </div>
-      
+        </div>
     )
 }

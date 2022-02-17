@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 	const [cells, setCells] = useState(Array(9).fill(''));
 	const [winner, setWinner] = useState();
 	const navigate = useNavigate();
+	const [count,setCount] = useState(0);
+	const[draw,setDraw] = useState('')
 
 	const checkForWinner = (squares) => {
 		let combos = {
@@ -44,40 +46,46 @@ import { useNavigate } from 'react-router-dom';
 						setWinner(squares[pattern[0]]);
 						handleClick();
 					}
+					else{
+						 if(count === 8)
+						 {
+							 setDraw("Draw")
+						 }
+					}
 				
 				  }
-					
+				 
 			}
-		
-			
-			);
-			
-            
+			); 
 		}
 	};
-	
+	 
 	
 	const handleClick = (num) => {
+		
 		if(winner){
-			return;
+			return ;
 		}
 		else {
 		if (cells[num] !== '') {
-			return;
+
+			return ;
 		}
 	
 		let squares = [...cells];
-
+		console.log(squares)
 		if (turn === 'X') {
 			squares[num] = 'X';
 			setTurn('O');
+			setCount(count+1)
 		} else {
 			squares[num] = 'O';
 			setTurn('X');
+			setCount(count+1)
 		}
-	
-		checkForWinner(squares);
 		setCells(squares);
+		checkForWinner(squares);
+		
 	}
 	};
 	const handleReset = () => {
@@ -122,13 +130,24 @@ import { useNavigate } from 'react-router-dom';
 					</tr>
 				</tbody>
 			</table>
-			{winner && (
+			
+			{winner  &&(
 				<>
-					<p>{winner} is the winner!</p>
-					<button onClick={()=>handleRestart()} >Reset</button>
-					<button onClick={()=>handleReset()} >Play Again</button>
+					
+					<p>{winner} is the winner!!!</p>
+					<button className="btn" onClick={()=>handleRestart()} >Reset</button>
+					<button className="btn" onClick={()=>handleReset()} >Play Again</button>
 				</>
-			)}
+			)||draw &&(
+				<>
+					
+					<p className='draw-state'>Game is {draw} !!!</p>
+					<button className="btn" onClick={()=>handleRestart()} >Reset</button>
+					<button className="btn" onClick={()=>handleReset()} >Play Again</button>
+				</>
+			)
+			
+			}
 		</div>
 	);
 
