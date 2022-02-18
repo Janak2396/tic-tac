@@ -1,13 +1,15 @@
 import './TicTac.css'
 import {  useState} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { renderMatches, useNavigate } from 'react-router-dom';
 
  export default  function Tictac(props){
     const [turn, setTurn] = useState('X');
 	const [cells, setCells] = useState(Array(9).fill(''));
 	const [winner, setWinner] = useState();
 	const navigate = useNavigate();
-
+	const [count,setCount] = useState(0);
+	const[draw,setDraw] = useState('')
+	
 	const checkForWinner = (squares) => {
 		let combos = {
 			across: [
@@ -26,8 +28,10 @@ import { useNavigate } from 'react-router-dom';
 			],
 		};
        
+	
        
 		for (let combo in combos) {
+			
 			combos[combo].forEach((pattern) => {
 				
 				if (
@@ -44,40 +48,47 @@ import { useNavigate } from 'react-router-dom';
 						setWinner(squares[pattern[0]]);
 						handleClick();
 					}
+					else{
+						 if(count === 8)
+						 {
+							 setDraw("Draw")
+						 }
+					}
 				
 				  }
-					
+				 
 			}
-		
-			
-			);
-			
-            
+			); 
 		}
 	};
-	
+	 
 	
 	const handleClick = (num) => {
+		
 		if(winner){
-			return;
+			return ;
 		}
 		else {
 		if (cells[num] !== '') {
-			return;
+
+			return ;
 		}
 	
 		let squares = [...cells];
-
+	//	console.log(squares)
 		if (turn === 'X') {
 			squares[num] = 'X';
+			
 			setTurn('O');
+			setCount(count+1)
 		} else {
 			squares[num] = 'O';
 			setTurn('X');
+			setCount(count+1)
 		}
-	
-		checkForWinner(squares);
 		setCells(squares);
+		checkForWinner(squares);
+		
 	}
 	};
 	const handleReset = () => {
@@ -91,7 +102,7 @@ import { useNavigate } from 'react-router-dom';
 	
 	const Cell = ({ num }) => {
        
-		return <td className='card' onClick={() => handleClick(num)}>{cells[num]}</td>;
+		return <td  className={(cells[num]=== `X`) ? "card" : "Ocard"} onClick={() => handleClick(num)}>{cells[num]}</td>;
 	};
 
 	return (
@@ -101,9 +112,11 @@ import { useNavigate } from 'react-router-dom';
 			 X : {props.user[0]}<br/>
 			 O : {props.user[1]}
 			</div>
-			<p  className='header'>Turn: {turn}</p> 
-			<table>
+			<div className='header'>
 				<p>X / O</p>
+				<p >Turn: {turn}</p> 
+			</div>
+			<table>
 				<tbody>
 					<tr >
 						<Cell num={0} />
@@ -122,13 +135,24 @@ import { useNavigate } from 'react-router-dom';
 					</tr>
 				</tbody>
 			</table>
-			{winner && (
+			
+			{winner  &&(
 				<>
-					<p>{winner} is the winner!</p>
-					<button onClick={()=>handleRestart()} >Reset</button>
-					<button onClick={()=>handleReset()} >Play Again</button>
+					
+					<p>{winner} is the winner!!!</p>
+					<button className="btn" onClick={()=>handleRestart()} >Reset</button>
+					<button className="btn" onClick={()=>handleReset()} >Play Again</button>
 				</>
-			)}
+			)||draw &&(
+				<>
+					
+					<p className='draw-state'>Game is {draw} !!!</p>
+					<button className="btn" onClick={()=>handleRestart()} >Reset</button>
+					<button className="btn" onClick={()=>handleReset()} >Play Again</button>
+				</>
+			)
+			
+			}
 		</div>
 	);
 
