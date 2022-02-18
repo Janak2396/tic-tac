@@ -1,45 +1,76 @@
 @media screen and (min-width : 500px) {
     .card{
-        height:6    0px
-    }
+        width: 30%;
+    height:12vh;}
+    .Ocard{
+        width: 30%;
+        height:12vh;
+        }
+    
 }
 @media screen and (max-width : 501px) {
     .card{
-        height: 100px;
+        width: 30%;
+        height:12vh;
     }
+    .Ocard{
+        width: 30%;
+        height:12vh;
+        }
 }
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+   
 }
 .header{
     font-family: "Arial", sans-serif;
     font-size: 20px;
     font-family: "Permanent Marker", cursive;
     text-align: center;
+    color:rgb(115, 143, 49);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
 }
 body {
     font-family: "Arial", sans-serif;
-    margin-left: 20px;
-    margin-right: 20px;
-    color: rgb(115, 143, 49);
+    font-weight: 900;
+    font-size: large;
     background-color: #272b4a;
 }
 table{
     width: 60%;
- 
+    border-spacing: 10px;
 }   
 .card{
-    border: solid 5px rgb(115, 143, 49) ;
+    border: solid 2px rgb(115, 143, 49) ;
+    box-shadow:  5px  5px rgb(115, 143, 49) ;
     border-radius: 10px;
-    width: 30%;
-    height:100px;
-    margin: 10px;
     text-align: center;
-    color: rgb(115, 143, 49);
+    color: rgb(0, 255, 242);
+    
    font-size: 7vh;
    font-family: "Permanent Marker", cursive;
+}
+
+.Ocard{
+    border: solid 2px rgb(115, 143, 49) ;
+    border-radius: 10px;
+    box-shadow:  5px  5px rgb(115, 143, 49) ;
+    text-align: center;
+    color: rgb(194, 191, 39);
+    
+   font-size: 7vh;
+   font-family: "Permanent Marker", cursive;
+}
+.user-name{
+    border: none;
+   
+    color: whitesmoke
 }
 
