@@ -1,9 +1,12 @@
 @media screen and (min-width : 500px) {
     .card{
         width: 30%;
-    height:10vh;}
+        font-size: 25px;
+    height:10vh;
+}
     .Ocard{
         width: 30%;
+        font-size: 25px;
         height:10vh;
         }
         table{
@@ -23,14 +26,17 @@
     .card{
         width: 30%;
         height:10vh;
-        font-size: 10px;
+        
+        font-size: 25px;
     }
     .Ocard{
         width: 30%;
+        font-size: 25px;
         height:10vh;
         }
      table{
             width: 70%;
+            
             border-spacing: 15px;
         }
     .header{
@@ -95,7 +101,7 @@ body {
     text-align: center;
     color: rgb(0, 255, 242);
     background-color: rgb(52, 64, 75);
-   font-size: 7vh;
+   
    font-family: "Permanent Marker", cursive;
 }
 
@@ -106,7 +112,7 @@ body {
     text-align: center;
     color: rgb(194, 191, 39);
     background-color: rgb(52, 64, 75);
-   font-size: 7vh;
+   
    font-family: "Permanent Marker", cursive;
 }
 .user-name{

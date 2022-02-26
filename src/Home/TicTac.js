@@ -51,6 +51,7 @@ import { renderMatches, useNavigate } from 'react-router-dom';
 					else{
 						 if(count === 8)
 						 {
+							 
 							 setDraw("Draw")
 						 }
 					}
@@ -66,11 +67,12 @@ import { renderMatches, useNavigate } from 'react-router-dom';
 	const handleClick = (num) => {
 		
 		if(winner){
+			
 			return ;
 		}
 		else {
 		if (cells[num] !== '') {
-
+			
 			return ;
 		}
 	
@@ -88,12 +90,14 @@ import { renderMatches, useNavigate } from 'react-router-dom';
 		}
 		setCells(squares);
 		checkForWinner(squares);
-		
+	
 	}
 	};
 	const handleReset = () => {
 		setWinner(null);
+		setDraw(null)
 		setCells(Array(9).fill(''));
+		setCount(0)
 	}
 	const handleRestart = () => {
 		
