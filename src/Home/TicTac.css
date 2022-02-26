@@ -1,22 +1,46 @@
 @media screen and (min-width : 500px) {
     .card{
         width: 30%;
-    height:12vh;}
+    height:10vh;}
     .Ocard{
         width: 30%;
-        height:12vh;
+        height:10vh;
         }
-    
+        table{
+            width: 35%;
+            border-spacing: 25px;
+        }   
+    .header{
+        width: 30%;
+    font-size: 18px;
+    }
+    .xandy{
+        font-size: large;
+        margin: 0px;
+    }
 }
 @media screen and (max-width : 501px) {
     .card{
         width: 30%;
-        height:12vh;
+        height:10vh;
+        font-size: 10px;
     }
     .Ocard{
         width: 30%;
-        height:12vh;
+        height:10vh;
         }
+     table{
+            width: 70%;
+            border-spacing: 15px;
+        }
+    .header{
+        width: 53%;
+        font-size: 12px;
+    }   
+    .xandy{
+        font-size: 13px;
+        margin: 0px;
+    }
 }
 .container{
     display: flex;
@@ -25,52 +49,75 @@
     margin-top: 50px;
    
 }
+
 .header{
-   
-    font-size: 20px;
+  
     font-family: "Permanent Marker", cursive;
     text-align: center;
-    color:rgb(115, 143, 49);
+    color:rgb(82, 116, 146);
     display: flex;
     flex-direction: row;
     align-items: center;
+  
     justify-content: space-between;
-    width: 60%;
+    
+}
+.userTurn{
+    border: none;
+    background-color: rgb(52, 64, 75);
+    padding: 3%;
+    border-radius: 10%;
+    color: rgb(82, 116, 146);
+    box-shadow:  0px  3px rgb(29, 34, 39) ;
+    margin-left: 20px;
+}
+.x{
+    color: rgb(0, 255, 242);
+    margin: 0px;
+    
+}
+.o{
+    color: rgb(194, 191, 39);
+    margin: 0px;
+
 }
 body {
     font-family: "Arial", sans-serif;
     font-weight: 900;
     font-size: large;
-    background-color: #272b4a;
+    background-color: rgb(30, 44, 51);
 }
-table{
-    width: 60%;
-    border-spacing: 10px;
-}   
+
 .card{
-    border: solid 2px rgb(115, 143, 49) ;
-    box-shadow:  5px  5px rgb(115, 143, 49) ;
+    border: none;
+    box-shadow:  0px  10px rgb(29, 34, 39) ;
     border-radius: 10px;
     text-align: center;
     color: rgb(0, 255, 242);
-    
+    background-color: rgb(52, 64, 75);
    font-size: 7vh;
    font-family: "Permanent Marker", cursive;
 }
 
 .Ocard{
-    border: solid 2px rgb(115, 143, 49) ;
+    border: none ;
     border-radius: 10px;
-    box-shadow:  5px  5px rgb(115, 143, 49) ;
+    box-shadow:  0px  10px rgb(29, 34, 39) ;
     text-align: center;
     color: rgb(194, 191, 39);
-    
+    background-color: rgb(52, 64, 75);
    font-size: 7vh;
    font-family: "Permanent Marker", cursive;
 }
 .user-name{
     border: none;
-   
-    color: whitesmoke
+    color: rgb(82, 116, 146);
 }
-
+.finalresult{
+    color:rgb(82, 116, 146);
+   
+}
+.reset{
+    display: flex;
+    flex-direction: row;
+}

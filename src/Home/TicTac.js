@@ -108,13 +108,14 @@ import { renderMatches, useNavigate } from 'react-router-dom';
 	return (
 		
 		<div className='container'>
-			<div className='user-name'>
-			 X : {props.user[0]}<br/>
-			 O : {props.user[1]}
-			</div>
+			
 			<div className='header'>
-				<p>X / O</p>
-				<p >Turn: {turn}</p> 
+				<div className='xandy'>
+					<p className='x'>X : {props.user[0]}</p>
+					
+					<p className='o'> O :{props.user[1]}</p>
+				</div>
+				<p className='userTurn'>Turn: {turn}</p> 
 			</div>
 			<table>
 				<tbody>
@@ -139,16 +140,20 @@ import { renderMatches, useNavigate } from 'react-router-dom';
 			{winner  &&(
 				<>
 					
-					<p>{winner} is the winner!!!</p>
+					<p className='finalresult'>{winner} is the winner!!!</p>
+					<div className='reset'>
 					<button className="btn" onClick={()=>handleRestart()} >Reset</button>
 					<button className="btn" onClick={()=>handleReset()} >Play Again</button>
+					</div>
 				</>
 			)||draw &&(
 				<>
 					
-					<p className='draw-state'>Game is {draw} !!!</p>
+					<p  className='finalresult'>Game is {draw} !!!</p>
+					<div className='reset'>
 					<button className="btn" onClick={()=>handleRestart()} >Reset</button>
 					<button className="btn" onClick={()=>handleReset()} >Play Again</button>
+					</div>
 				</>
 			)
 			

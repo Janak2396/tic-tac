@@ -8,7 +8,8 @@
     justify-content: center;
 }
 .card-user{
-    border: solid 2px rgb(115, 143, 49);
+    border: solid 1px rgb(29, 34, 39);
+    box-shadow:  0px  10px rgb(29, 34, 39) ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +17,11 @@
     font-size: 20px;
     font-family: "Permanent Marker", cursive;
     text-align: center;
-    color: rgb(115, 143, 49);
+    color: rgb(82, 116, 146);
     padding: 10px;
     margin: auto;
     margin-top: 50px;
-    box-shadow:  5px  5px rgb(115, 143, 49) ;
+ 
 }
 input{
     margin: 5px;
@@ -29,17 +30,17 @@ input{
     border: none;
     border-radius: 10px;
     padding: 10px;
-
+  
 }
 .btn{
     align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color:  rgb(52, 64, 75);
   border-radius: 24px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-shadow: 0px  5px rgb(29, 34, 39);
   box-sizing: border-box;
-  color: #3c4043;
+  color:  rgb(82, 116, 146);;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
@@ -64,4 +65,5 @@ input{
   will-change: transform,opacity;
   z-index: 0;
   margin: 5px;
+  font-size: x-large;
 }
